@@ -20,6 +20,7 @@ func main() {
 		fmt.Println("Absent")
 	}
 
+	//Deletes the  element in map
 	delete(m, "arun")
 
 	if _, ok := m["arun"]; ok {
