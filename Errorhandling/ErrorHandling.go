@@ -1,4 +1,4 @@
-package main
+package ErrorHandling
 
 import (
 	"fmt"
@@ -6,7 +6,8 @@ import (
 	"os"
 )
 
-func main() {
+func ExportedFunction() {
+	fmt.Println("Inside Errorhandling pkg/Main")
 	f, e := os.Create("log.txt")
 	if e != nil {
 		fmt.Println(e)
