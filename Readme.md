@@ -41,3 +41,7 @@
 
 ## 
 - var m = make(map[string]interface{}) 
+- preincrement and predecrement not supported in golang.
+
+
+
