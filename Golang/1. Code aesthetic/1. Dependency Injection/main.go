@@ -66,6 +66,7 @@ type Service struct {
 }
 
 // Public (because it's not having prefix ) Constructor which returns the object for Service
+// Dependency Injection aka constructor injection.
 func NewService(str storage, email mail) *Service {
 	srv := &Service{
 		name:  "service_1",
@@ -80,7 +81,7 @@ func main() {
 	// d := &database{}
 	// d.execute()
 
-	// syntax to create a var for interface and not objects as interfaces are abstract
+	// NOTE: syntax to create a var for interface and not objects as interfaces are abstract
 	// var st storage
 
 	// Method 1:
