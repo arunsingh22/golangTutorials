@@ -17,6 +17,7 @@ func cat(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	//HandleFunc attaches handlers to defautServeMux
+	// HandleFunc is using Adapter pattern 
 	http.HandleFunc("/dog/", dog)
 	http.HandleFunc("/cat", cat)
 	fmt.Println("Starting server...at 8080")
