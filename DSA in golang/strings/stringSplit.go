@@ -9,7 +9,7 @@ func main() {
 	str := "luffy is still joyboy"
 
 	// Split the string into words
-	words := strings.Fields(str)
+	words := strings.Fields(str) // splts the strings on \t , \n and whitespaces
 	// strings.Split(str, " ")
 
 	// Loop over each word
