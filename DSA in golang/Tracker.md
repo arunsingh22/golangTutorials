@@ -1,13 +1,13 @@
 
 # Topics              Status
 --------------------------------
-Stack                 [Done]
+Stack                 [DONE]
+Map & sync.Map        [DONE]
+Slice/String          []
+Searching             []
+Sorting               []
 Queue                 []
 LinkedList            []
-Slice/String          []
-HashMap               []
-Sorting               []
-Searching             []
 Set                   []
 Trees                 []
 TwoPointers           []
