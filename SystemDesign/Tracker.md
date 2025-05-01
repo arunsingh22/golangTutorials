@@ -1,10 +1,12 @@
 
 # Topics             Status
 --------------------------------
-SOLID/KISS           []
-TinyURL              []
-ElevatorProblem      []
+Design Principle      
+- SOLID/KISS/DRY     [DONE]
 ParkingLot           []
+TinyURL              []
+Rate Limiter         []
+ElevatorProblem      []
 VendingMachine       []
 LoggingSystem        []
 MeetingScheduler     []
@@ -17,4 +19,11 @@ SplitWiseApp         []
 Snake&Ladder         []
 Chess                []
 InventoryMgmtSystem  []
-RateLimiter          []
+
+
+- KISS : Keep it simple stupid - 
+Over-complication can happen in 2 places 
+1. Design complication this leads to scalability and maintainbility and can lead to 
+   tight coupling.
+2. Implementaion complication can lead to tigh coupling and poor readablity and             maintainbility.
+3. **AVOID OVER-ENGINEERING** : Premature Abstraction and premature optimizaiton
