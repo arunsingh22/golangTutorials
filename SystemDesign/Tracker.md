@@ -1,6 +1,8 @@
 
 # Topics             Status
 --------------------------------
+SOLID/KISS           []
+TinyURL              []
 ElevatorProblem      []
 ParkingLot           []
 VendingMachine       []
