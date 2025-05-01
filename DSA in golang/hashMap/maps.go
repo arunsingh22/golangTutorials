@@ -1,11 +1,12 @@
-// You can edit this code!
-// Click here and start typing.
 package main
 
 import "fmt"
 
+// MUST READ : https://go101.org/optimizations/6-map.html
+
 func main() {
 
+	// NOTE: make(map[string]int) equivalent to map[string]innt{}
 	dict := map[string]int{} // nil, no physical storage only declaration of type.
 	fmt.Println("First: ", dict)
 	// dict["x"] = 10          // ERROR
@@ -14,9 +15,12 @@ func main() {
 	// are nil but if inserted then it will panic.
 	dict2 := make(map[string]int, 10) //non-nil but empty because now there is a size 10 hashtable getting created under the hood.
 	dict2["peacock"] = 10
+
+	// In Go, the capacity of a map is unlimited in theory, it is only limited by available memory.
+	// That is why the built-in cap function doesn't apply to maps.
 	fmt.Println("length of dict2: ", len(dict2))
 
-	// make(map[string]int) equilvalent to map[string]int{}
+	// NOTE: make(map[string]int) equilvalent to map[string]int{}
 	dict3 := map[string]int{} // non-nil BUT empty
 	dict3["key"] = 1
 	fmt.Println(dict3)
@@ -44,6 +48,12 @@ func main() {
 
 	//Deletes the  element in map
 	delete(m, "arun")
+
+	// clears the map but not deallocates the memory
+	clear(m)
+
+	// NOTE:
+	// aMap[key]++ is more efficient than aMap[key] = aMap[key] + 1
 
 	//Note: Maps can't be compared to one another; maps can be compared only to nil as a special case.
 	// dict == dict2 SYNTAX ERROR
