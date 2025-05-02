@@ -24,7 +24,7 @@ func main() {
 	slices.Sort(s) // default is sorting in ascending order
 	fmt.Println(s)
 
-	slices.SortFunc(s, func(a, b int) int {
+	slices.SortStableFunc(s, func(a, b int) int {
 		return a - b // same as ascending order
 	})
 	fmt.Println("Sorting after custome sorting: ", s)
