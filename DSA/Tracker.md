@@ -4,7 +4,8 @@
 Stack                 [DONE]
 Map & sync.Map        [DONE]
 2D Matrix             [...]
-Recursion             []
+Recursion             [DONE]
+BackTracking          []
 Slice/String          []
 Searching             []
 Sorting               [...]
@@ -16,7 +17,6 @@ PriorityQ/heap        []
 Graph                 []
 Tries                 []
 GreedyAlgorithms      []
-BackTracking          []
 DP                    []
 LinkedList            []
 
@@ -46,3 +46,23 @@ if math.IsInf(x, -1) {
 	fmt.Println("hurrey")
 }
 fmt.Println(x)
+
+
+
+
+- Date: (7,8,9,10): 
+	-> Complete Golang revision and practice interview questions (Morning 2 hrs daily)
+	-> Composition vs Inheritance
+	-> Coupling vs cohesion
+	-> DSA : 2D Matrix and BackTracking
+
+- Date:(11,12,13,14,15,16,17): 
+	-> Design patterns
+		- SOLID Principle
+		- Singleton 
+		- Decorator
+		- Strategy
+		- Builder aka functional Options
+		- Factory
+	-> Parking lot problem
+	-> rate-limiter problem
