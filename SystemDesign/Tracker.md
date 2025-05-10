@@ -1,8 +1,14 @@
 
 # Topics             Status
+-------------------------------
+SOLID/KISS/DRY        [DONE]
+Factory Pattern       [DONE]
+Singleton Pattern     [...]
+Builder Pattern       []
+Strategy Pattern      []
+Decorator Pattern     []
+Observer Pattern      []
 --------------------------------
-Design Principle      
-- SOLID/KISS/DRY     [DONE]
 ParkingLot           []
 TinyURL              []
 Rate Limiter         []

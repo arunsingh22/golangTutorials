@@ -11,14 +11,14 @@ Searching             []
 Sorting               [...]
 PriorityQ/heap        []
 Queue                 []
+LinkedList            []
 Set                   []
 Trees                 []
 Two Pointers          []
 Graph                 []
-Tries                 []
 GreedyAlgorithms      []
 DP                    []
-LinkedList            []
+Tries                 []
 
 
 

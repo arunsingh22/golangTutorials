@@ -18,7 +18,7 @@ var (
 // This approch still has a potential to break in production under extreme stress as the if condition is not atomic in nature
 func getConnection() *database {
 	if dbConn == nil { //check
-		lock.Lock()    //lock 
+		lock.Lock() //lock
 		defer lock.Unlock()
 		// If condition is not atomic and hence there can be certain edge cases where this will fail.
 		if dbConn == nil { //check
@@ -57,19 +57,19 @@ func ExampleOnce() {
 	// Only once
 }
 
-func main() {
-	// var once sync.Once
-	// fx := func() {
-	// 	fmt.Println("One time")
-	// }
-	// for i := 0; i < 10; i++ {
-	// 	once.Do(fx)
-	// 	fmt.Println("other")
-	// }
+// func main() {
+// 	// var once sync.Once
+// 	// fx := func() {
+// 	// 	fmt.Println("One time")
+// 	// }
+// 	// for i := 0; i < 10; i++ {
+// 	// 	once.Do(fx)
+// 	// 	fmt.Println("other")
+// 	// }
 
-	// for i := 0; i < 10; i++ {
-	// 	fmt.Println(getConnectionOnlyOnce())
-	// }
+// 	// for i := 0; i < 10; i++ {
+// 	// 	fmt.Println(getConnectionOnlyOnce())
+// 	// }
 
-	ExampleOnce()
-}
+// 	ExampleOnce()
+// }
