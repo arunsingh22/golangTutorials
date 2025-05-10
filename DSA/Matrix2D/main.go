@@ -17,11 +17,15 @@ func main() {
 	// potentially fragmented in memory.
 
 	// declaring a 2D matrix
-	mat2D := [][]int{{1, 2, 3}, {4, 5, 6}}
-	print2DArray(mat2D)
+	mat2D := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}
+	findDiagonalOrder(mat2D)
+	// InPlaceTranspose(mat2D)
+	// Transpose(mat2D)
+	// print2DArray(mat2D)
 
-	mat3D := [][][]int{{{1, 2}, {3, 4}, {5, 6}}}
-	print3DArray(mat3D)
+	// mat3D := [][][]int{{{1, 2}, {3, 4}, {5, 6}}}
+	// Transpose(mat3D)
+	// print3DArray(mat3D)
 
 }
 
@@ -39,10 +43,22 @@ func print2DArray(mat [][]int) {
 	col_len := len(mat[0])
 	fmt.Println(row_len, col_len)
 
-	for i := 0; i < row_len; i++ {
-		for j := 0; j < col_len; j++ {
-			fmt.Print(mat[i][j], " ")
+	// standard way: accessing element by element
+	// fmt.Println("Standard Way:")
+	// for i := 0; i < row_len; i++ {
+	// 	for j := 0; j < col_len; j++ {
+	// 		fmt.Print(mat[i][j], " ")
+	// 	}
+	// 	fmt.Println("")
+	// }
+
+	// golang way: accessing row by row
+	fmt.Println("Accessing row wise:")
+	for _, row := range mat {
+		// fmt.Println(idx, row)
+		for _, val := range row {
+			fmt.Print(val, ",")
 		}
-		fmt.Println("")
+		fmt.Println()
 	}
 }
