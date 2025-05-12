@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"sync"
 	"time"
@@ -34,8 +35,12 @@ func getInstance() *student {
 }
 
 func main() {
-	for range 30 {
-		go getInstance()
+	// for range 30 {
+	// 	go getInstance()
+	// }
+
+	for range 10 {
+		go getDBInstance(context.Background(), "mongo")
 	}
 	time.Sleep(2 * time.Second)
 }
