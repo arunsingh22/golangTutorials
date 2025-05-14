@@ -17,8 +17,8 @@ func main() {
 	// potentially fragmented in memory.
 
 	// declaring a 2D matrix
-	mat2D := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}
-	findDiagonalOrder(mat2D)
+	// mat2D := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}
+	// findDiagonalOrder(mat2D)
 	// InPlaceTranspose(mat2D)
 	// Transpose(mat2D)
 	// print2DArray(mat2D)
@@ -26,6 +26,10 @@ func main() {
 	// mat3D := [][][]int{{{1, 2}, {3, 4}, {5, 6}}}
 	// Transpose(mat3D)
 	// print3DArray(mat3D)
+
+	mat := [][]int{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}
+	floodFill(mat, 1, 1, 2)
+	fmt.Println(mat)
 
 }
 

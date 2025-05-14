@@ -41,5 +41,4 @@ Instead of: This will create alot of load for GC
 type Reader interface{
     Read(n int) (b []byte, err error)
 }
-========================================================
-
+=======================================================

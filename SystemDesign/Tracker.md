@@ -9,8 +9,7 @@ Strategy Pattern     [...]
 Builder Pattern      []
 Decorator Pattern    []
 --------------------------------
-GOGC                 []
-Go Scheduler         []
+GOGC & Go Scheduler  []
 [https://medium.com/@sanilkhurana7/understanding-the-go-scheduler-and-looking-at-how-it-works-e431a6daacf]
 --------------------------------
 Rate Limiter         []

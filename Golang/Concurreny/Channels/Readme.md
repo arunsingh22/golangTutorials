@@ -16,18 +16,21 @@
 
 ## Select block
 ---------------------------------------------------
-- A select block is used for listening for ALL the channels simulentously which ever is ready is read. If more than 1 channels are ready then any one is choosen at random.
+- A select block is used for listening for ALL the channels simulentously which ever is ready is read. 
+- **If more than 1 channels are ready then any one is choosen at random.**
     example:
-        for{
-            select{
-                case <-chan1:
-                    fmt.Println("")
-                case <-chan2:
-                    //do somthing else
-            }
+        select { 
+            case <-chan1:
+                fmt.Println("")
+            case <-chan2:
+                //do somthing else
+            default:
+                fmt.Println("No activity")
         }
-- In a select block, the default case is always  ready and will be choosen if no other case is
+        
+- In a select block, the default case is always ready and will be choosen if no other case is
 - DON'T use default inside a loop- the select will busy wait and waste CPU cycles.
+
 ## Channels and Synchroization
 -----------------------------------------------------
 0. A unbuffered channel syncs reader and writer.
@@ -52,8 +55,23 @@
 
 ## Channel Axioms (VERY IMPORTANT.)
 -------------------------------------------
-A send to a nil channel blocks forever
-A receive from a nil channel blocks forever
+```
+func main() {
+	var ch chan int // ch is nil initially
+
+	go func() {
+		ch <- 42 // This will block indefinitely
+	}()
+
+	value := <-ch // This too, will block indefinitely
+	fmt.Println(value)
+}
+```
+- **A nil channel is never ready for communication.**
+- var ch = make(chan int) --> declares a unbuffered chan of len 0 
+- var ch chan int -> this is a nil chan
+A send/receive to/from a nil channel blocks forever
+
 A close of nil channel panics.
 
 A send to a closed channel panics (Once a channel is closed, you can't send further values on it else it panics. This is what you experience.)
@@ -98,3 +116,22 @@ Common uses of buffered channels:
 **Amdal's law**
 
 
+# what is the value returned when a channel is close in ok idiom.
+Ans:  https://www.educative.io/answers/what-is-closec-chan---type-in-golang
+
+# How to check if a channel is closed or not
+Ans: Closing a chan is ONE-TIME ops, with no going back, onces it is closed it's closed
+forever, NO UNDO or going back. 
+- Closing a already closed chan => panic
+- The ONLY way to check if a chan is closed is to read the value and check it's zeroed value
+
+# Who should close the channels?
+Ans: Senders close channels and receivers only check
+
+# "Is there any other method to create a channel without the make function?" 
+Ans: NO WAY! YOU MUST ALWAYS USE MAKE(). Channel types do not support composite literals
+- var ch = make(chan int) --> declares a unbuffered chan of len 0 
+- var ch chan int -> this is a nil chan
+
+
+[https://stackoverflow.com/questions/71626679/can-i-create-channel-without-using-the-make-function#:~:text=%22Is%20there%20any%20other%20method,the%20channel%2C%20leaving%20it%20nil%20.]

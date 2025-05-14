@@ -8,7 +8,7 @@ In Go we’ve two concepts related to interfaces:
 example: 
 ```type I interface {
     m1()
-    m2(int)
+    m2(int)statement
     m3(int) int
     m4() int
 }
