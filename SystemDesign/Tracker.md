@@ -9,9 +9,6 @@ Strategy Pattern     [...]
 Builder Pattern      []
 Decorator Pattern    []
 --------------------------------
-GOGC & Go Scheduler  []
-[https://medium.com/@sanilkhurana7/understanding-the-go-scheduler-and-looking-at-how-it-works-e431a6daacf]
---------------------------------
 Rate Limiter         []
 ParkingLot           []
 TinyURL              []
@@ -35,15 +32,16 @@ InventoryMgmtSystem  []
 Over-complication can happen in 2 places 
 1. Design complication this leads to scalability and maintainbility and can lead to 
    tight coupling.
-2. Implementaion complication can lead to tigh coupling and poor readablity and             maintainbility.
+2. Implementaion complication can lead to tigh coupling and poor readablity and            maintainbility.
 3. **AVOID OVER-ENGINEERING** : Premature Abstraction and premature optimizaiton
+
+
 
 Q: How many connections can a single Web/API Server can handle/accept 
    - What about servers like Nginx how much they can accept
 
 
-
-# LLD 
+# LLD
 [https://medium.com/better-programming/how-to-ace-the-low-level-design-interview-3f1be6401070]
 
 ## Requirement gathering

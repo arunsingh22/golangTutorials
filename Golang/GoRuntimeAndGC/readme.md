@@ -1,6 +1,13 @@
 
 Go runtime Sceduler:
+- The globalRunnbleQueue is check after every 61 ticks(prime number) and when
+  the localRunnableQueue is empty.
+- The localRunnableQueue len is 256.
+- The goroutine do not have any ID unlike threads 
+- The goroutine stack is dynamic starting with 2KB of size. 
 [https://medium.com/@sanilkhurana7/understanding-the-go-scheduler-and-looking-at-how-it-works-e431a6daacf]
+
+[https://levelup.gitconnected.com/goroutine-scheduler-revealed-youll-never-see-goroutines-the-same-way-again-3c159b01c25a]
 
 Go GC:
 - It's concurrent, tri-color mark and sweep algorithm.
