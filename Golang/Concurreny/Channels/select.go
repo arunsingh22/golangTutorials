@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"time"
 )
 
@@ -32,10 +33,14 @@ func main() {
 		select {
 		case x, ok := <-ch1:
 			if ok {
-				fmt.Println(x)
+				fmt.Println("channel closed", x)
+				// set the ch1 to nil as nil channels are removed from the select block as
+				// reading from them always block and select knows this
+				// this is great way to soft delete a channel
+				ch1 = nil
 			}
 		case <-ticker.C:
-			fmt.Println("tick")
+			fmt.Println("tick", reflect.TypeOf(ch1))
 		case <-timer.C:
 			fmt.Println("Timer has fired after 5 seconds!")
 			return

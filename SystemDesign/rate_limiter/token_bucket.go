@@ -18,7 +18,7 @@ type TokenBucket struct {
 	mu       *sync.Mutex
 }
 
-func NewTokenBucker(ctx context.Context, capacity int, fillRate int) IRateLimiter {
+func NewTokenBucket(ctx context.Context, capacity int, fillRate int) IRateLimiter {
 	if capacity <= 0 {
 		panic("capacity must be positive")
 	}
@@ -37,16 +37,20 @@ func NewTokenBucker(ctx context.Context, capacity int, fillRate int) IRateLimite
 }
 
 func (tb *TokenBucket) refillBucket(ctx context.Context, fillrate int) {
-	if tb.tokens >= tb.capacity {
-		fmt.Println("bucket is full, refill halted!")
-	}
 	ticker := time.NewTicker(time.Duration(fillrate) * time.Second)
 	defer ticker.Stop()
 
 	for {
 		select {
 		case <-ticker.C:
-
+			tb.mu.Lock()
+			if tb.tokens+fillrate >= tb.capacity {
+				fmt.Println("bucket is full, refill halted!")
+				tb.tokens = tb.capacity
+			} else {
+				tb.tokens += fillrate
+			}
+			tb.mu.Unlock()
 		case <-ctx.Done():
 			fmt.Println("exiting refillBucket routine..")
 			return
@@ -55,5 +59,12 @@ func (tb *TokenBucket) refillBucket(ctx context.Context, fillrate int) {
 }
 
 func (tb *TokenBucket) IsRequestAllowed(req any) bool {
-	return true
+	tb.mu.Lock()
+	if tb.tokens >= 0 {
+		tb.tokens--
+		fmt.Println("Token bucket allows..")
+		return true
+	}
+	tb.mu.Unlock()
+	return false
 }

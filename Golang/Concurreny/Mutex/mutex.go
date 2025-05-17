@@ -9,6 +9,7 @@ type balance struct {
 
 func main() {
 
+	lock.
 	bal := &balance{
 		amt : 10,
 	}

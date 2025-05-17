@@ -88,7 +88,7 @@ A receive from a closed channel returns the zero value immediately
 | `Partially_Empty`     | Read         | Write        | Read           |
 | `Full`                | Read         | Gets Blocked | Panic          |
 | `Closed`              | Default Value| Panic        | Panic          |  
-| `Receiver-only`       | OK           | Compile Error| Compiler Error |
+| `Receiver-only`       | OK           | Compile Error| Compiler Error | // The reason it's compiler err becasue from runtime perspetive receive/send only chans are just additional restrictions imposed by the compiler and not by the runtime itself.
 | `Send-only`           | Compile Error| OK           |  OK            |
 
 - **Select ignores a nil channel since it would always block**
@@ -123,7 +123,7 @@ Ans:  https://www.educative.io/answers/what-is-closec-chan---type-in-golang
 Ans: Closing a chan is ONE-TIME ops, with no going back, onces it is closed it's closed
 forever, NO UNDO or going back. 
 - Closing a already closed chan => panic
-- The ONLY way to check if a chan is closed is to read the value and check it's zeroed value
+**- The ONLY way to check if a chan is closed is to read the value and check it's zeroed value**
 
 # Who should close the channels?
 Ans: Senders close channels and receivers only check
@@ -132,6 +132,3 @@ Ans: Senders close channels and receivers only check
 Ans: NO WAY! YOU MUST ALWAYS USE MAKE(). Channel types do not support composite literals
 - var ch = make(chan int) --> declares a unbuffered chan of len 0 
 - var ch chan int -> this is a nil chan
-
-
-[https://stackoverflow.com/questions/71626679/can-i-create-channel-without-using-the-make-function#:~:text=%22Is%20there%20any%20other%20method,the%20channel%2C%20leaving%20it%20nil%20.]

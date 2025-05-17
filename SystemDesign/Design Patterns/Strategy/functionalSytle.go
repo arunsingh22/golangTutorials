@@ -3,9 +3,11 @@ package main
 import "fmt"
 
 // Strategy function type: takes two integers and returns an integer
+// This is equivalent to interfac in OOP style
 type Operation func(int, int) int
 
 // Context: Holds the currently selected strategy
+// Struct which implement the interface
 type Calculator struct {
 	operation Operation
 }

@@ -4,29 +4,31 @@
 SOLID/KISS/DRY       [DONE]
 Factory Pattern      [DONE]
 Singleton Pattern    [DONE]
+Strategy Pattern     [DONE]
 Observer Pattern     [DONE]
-Strategy Pattern     [...]
-Builder Pattern      []
-Decorator Pattern    []
+Decorator Pattern    [...]
 --------------------------------
-Rate Limiter         []
+Rate Limiter         [...] 
+[https://medium.com/@choudharys710/lld-machine-coding-w-implementation-rate-limiter-34f87e74120f]
 ParkingLot           []
 TinyURL              []
-ElevatorProblem      []
+ElevatorProblem      [] 
 --------------------------------
+SplitWiseApp         []
+BookMyShow           []
 VendingMachine       []
 LoggingSystem        []
-BookMyShow           []
 Meeting Scheduler    []
 Cache                []
 ATMSystem            []
 CarRentalSystem      []
 Tic-tac-Toe          []
-SplitWiseApp         []
 Snake&Ladder         []
 Chess                []
 InventoryMgmtSystem  []
 
+
+[https://codewitharyan.com/system-design/low-level-design]
 
 - KISS : Keep it simple stupid - 
 Over-complication can happen in 2 places 
