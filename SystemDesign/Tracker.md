@@ -8,11 +8,10 @@ Strategy Pattern     [DONE]
 Observer Pattern     [DONE]
 Decorator Pattern    [...]
 --------------------------------
-Rate Limiter         [...] 
-[https://medium.com/@choudharys710/lld-machine-coding-w-implementation-rate-limiter-34f87e74120f]
+Rate Limiter         [...] [https://medium.com/@choudharys710/lld-machine-coding-w-implementation-rate-limiter-34f87e74120f]
 ParkingLot           []
 TinyURL              []
-ElevatorProblem      [] 
+ElevatorProblem      []
 --------------------------------
 SplitWiseApp         []
 BookMyShow           []
@@ -60,3 +59,26 @@ Q: How many connections can a single Web/API Server can handle/accept
 ## NOTE: 
    The interview doesn't expect any kind of seq diagrams, activity diagrams etc.
    but you can draw a rough diagram for your own understanding.
+
+# Now in any object-oriented design interview, you interviewer is typically looking for three things:
+
+## 1. How you list down requirements, especially core features?
+
+e.g. If your problem statement is “Design a Parking Lot” then your core features will be park() and unpark() methods
+
+if your problem statement is “Design a restaurant food order and rating system like zomato, swiggy, uber eats etc” then your core features will be
+
+orderFood()
+rateOrder()
+display list of restaurants based on their rating or popularity
+
+## 2. How you break your problem statement in multiple classes
+
+I always find it easier to start listing entities and their corresponding entity managers(if required) first. e.g. For restaurant food ordering and rating system your entities can be Restaurant, order, FoodItem etc and their corresponding managers will be RestaurantsManager, OrdersManager etc.
+
+## 3. How you use design patterns to solve the core features
+The most common design patterns that you will come across in a low level design interview are Strategy, Factory, Singleton and Observer. You should be familiar with their implementation and different use cases where they can be used. We will see some of those use cases in a moment.
+
+## 4. A fourth topic is also discussed if you have done well in above three steps.
+
+Handling multi-threading. There will be discussion on use of locks, synchronization features and thread safe data structures for your design to work correctly in a multi-threaded environment.
