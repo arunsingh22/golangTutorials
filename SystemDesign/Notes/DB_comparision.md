@@ -12,7 +12,6 @@
 - 
 - Oracle/MySql/Postgres do not support multi-master model which means when a write request it can only be written into the master/live DB node only. 
 
-k
 # Active Passive Architecture
 - In a write heavy sys the master node becomes hot node
 - If master node cluster goes down , the passive cluster would take some time to become primary so there will a lag observed and all writes will fail for the same time but reads will be successfull. 

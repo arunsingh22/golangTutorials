@@ -1,24 +1,17 @@
 package main
 
-import "fmt"
-
 func getMaximumGold(grid [][]int) int {
-	result := -1
 	finalSum := 0
 	m := len(grid)
 	n := len(grid[0])
 
-	s, c := 0, 0
 	for i := 0; i < m; i++ {
 		for j := 0; j < n; j++ {
-			if grid[i][j] > 0 && grid[i][j] > int(result) {
-				result = grid[i][j]
-				s, c = i, j
+			if grid[i][j] > 0 {
+				findMaxGoldPath(grid, i, j, grid[i][j], &finalSum)
 			}
 		}
 	}
-	fmt.Println(result)
-	findMaxGoldPath(grid, s, c, result, &finalSum)
 	return finalSum
 }
 
@@ -30,16 +23,18 @@ func findMaxGoldPath(grid [][]int, i, j, result int, finalSum *int) {
 	}
 	if result+grid[i][j] > *finalSum {
 		*finalSum = result + grid[i][j]
+		// fmt.Println(*finalSum)
 	}
 
 	// blocking the cell/ marking it as visited
+	tmp := grid[i][j]
 	grid[i][j] = 0
 
-	findMaxGoldPath(grid, i+1, j, result+grid[i][j], finalSum)
-	findMaxGoldPath(grid, i-1, j, result+grid[i][j], finalSum)
-	findMaxGoldPath(grid, i, j+1, result+grid[i][j], finalSum)
-	findMaxGoldPath(grid, i, j-1, result+grid[i][j], finalSum)
+	findMaxGoldPath(grid, i+1, j, result+tmp, finalSum)
+	findMaxGoldPath(grid, i-1, j, result+tmp, finalSum)
+	findMaxGoldPath(grid, i, j+1, result+tmp, finalSum)
+	findMaxGoldPath(grid, i, j-1, result+tmp, finalSum)
 
 	// mark unvisted
-	grid[i][j] = 1
+	grid[i][j] = tmp
 }

@@ -3,10 +3,10 @@
 --------------------------------
 Stack                 [DONE]
 Map & sync.Map        [DONE]
-2D Matrix             [...]
+2D Matrix             [DONE]
 Recursion             [DONE]
-BackTracking          []
-Slice/String          []
+BackTracking          [DONE]
+Slice/String          [DONE]
 Searching             []
 Sorting               [...]
 PriorityQ/heap        [...]
@@ -14,7 +14,6 @@ Queue                 []
 LinkedList            []
 Set                   []
 Trees                 []
-Two Pointers          []
 Graph                 []
 GreedyAlgorithms      []
 DP                    []
@@ -30,7 +29,6 @@ sync.NoCopy : It's a runtime primitive type which is used in all the sync packag
 
 
 1. print all prefix/suffix of a string
-2. string matching algorithm - like KMP
 3. All main sorting algorithms.
 4. 
 

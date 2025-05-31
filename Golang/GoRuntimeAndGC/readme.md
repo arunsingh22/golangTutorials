@@ -5,6 +5,8 @@ Go runtime Sceduler:
 - The localRunnableQueue len is 256.
 - The goroutine do not have any ID unlike threads 
 - The goroutine stack is dynamic starting with 2KB of size. 
+- runtime.GOMAXPROCS(0) // get the current allowed number of logical processors
+  - Output: 8 (depends on your machine)
 [https://medium.com/@sanilkhurana7/understanding-the-go-scheduler-and-looking-at-how-it-works-e431a6daacf]
 
 [https://levelup.gitconnected.com/goroutine-scheduler-revealed-youll-never-see-goroutines-the-same-way-again-3c159b01c25a]

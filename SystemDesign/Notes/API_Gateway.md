@@ -1,7 +1,6 @@
 
-Q: Is API Gateay Single point of Failure (SPF) ?
-Ans: No, AWS API gateways  Regional service specific which itself has multiple AZ's , so a API G/W routes load
-b/w diff AZ's and each region has it's own API Gateway and these G/Ws are behind DNS service which routes b/w diff regions
+Q: Is API Gateway Single point of Failure (SPF) ?
+Ans: No, AWS API gateways  Regional service specific which itself has multiple AZ's , so a API G/W routes load b/w diff AZ's and each region has it's own API Gateway and these G/Ws are behind DNS service which routes b/w diff regions
 
 
 Regional Endpoint: When you create an API Gateway in AWS, it's a regional service. This means that the API Gateway and its underlying infrastructure are deployed within the specific AWS region you choose (e.g., us-east-1, eu-west-2, ap-south-1 - which includes Bengaluru). You get a regional endpoint for your API, something like https://your-api-id.execute-api.your-region.amazonaws.com.

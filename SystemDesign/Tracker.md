@@ -29,6 +29,8 @@ InventoryMgmtSystem  []
 
 [https://codewitharyan.com/system-design/low-level-design]
 
+
+
 - KISS : Keep it simple stupid - 
 Over-complication can happen in 2 places 
 1. Design complication this leads to scalability and maintainbility and can lead to 

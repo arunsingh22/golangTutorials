@@ -12,6 +12,7 @@ import (
 // 	len      int   // number of bytes
 // }
 
+// IMPORTANT
 //1. In Go, a string is in effect a read-only slice of bytes.
 //2. fmt.Println(&s[0]) //taking address of any char or byte is NOT allowed.
 
@@ -43,7 +44,7 @@ func mostWordsFound(sentences []string) int {
 	return int(ans)
 }
 
-//ranging over strings
+// ranging over strings
 func display(str string) {
 	for _, k := range str {
 		fmt.Println(string(k)) //this by default gives me UTF-8 representation of char o
