@@ -19,7 +19,7 @@ import (
 //     fmt.Println(i, j)
 // }
 
-func main() {
+func maiN() {
 	nums := []int{1, 2, 3, 4, 5, 6, 7}
 
 	// Most elegant way to do in-place reverse

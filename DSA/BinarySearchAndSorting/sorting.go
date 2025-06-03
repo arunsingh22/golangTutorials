@@ -18,7 +18,7 @@ import (
 // slices.Index(arr, target) int // lowerbound
 // slices.LastIndex(arr, target) int // upperbound
 
-func main() {
+func mainFunc() {
 	// sorting array of integers.
 	s := []int{4, 2, 3, 1}
 	slices.Sort(s) // default is sorting in ascending order
